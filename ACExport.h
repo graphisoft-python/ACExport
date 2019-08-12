@@ -2,10 +2,22 @@
 
 #include	"Python.h"
 #include	"pybind11/pybind11.h"
-
+#include	"Location.hpp"
 
 typedef struct {
 	void(*WriteReport_Alert)(const char* format, ...);
+
+
+
+
+
+
+	//-------- IO --------
+
+	/*this function only used in class constructor functions of pybind export module.
+	  please delete outData on class disposed  */
+	IO::Name (*ReadFile)(GS::UniString &relativePath, char **outData, UINT32 *outSize);
+
 }ExportFuns;
 
 
