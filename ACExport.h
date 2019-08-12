@@ -12,11 +12,8 @@ typedef struct {
 
 
 
-	//-------- IO --------
-
-	/*this function only used in class constructor functions of pybind export module.
-	  please delete outData on class disposed  */
-	IO::Name (*ReadFile)(GS::UniString &relativePath, char **outData, UINT32 *outSize);
+	//-------- Application --------
+	IO::Location(*ApplicationPath)();
 
 }ExportFuns;
 

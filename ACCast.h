@@ -220,3 +220,12 @@ PyThreadState *GetCurrentAppState() {
 	}
 	throw py::type_error();
 }
+
+ExportFuns *GetExtFuncs() {
+	py::module m_sys = py::module::import("sys");
+	py::detail::type_caster<APP_Info> caster;
+	if (caster.load(m_sys.attr("vAppInfo"),true)) {
+		return (*caster).iFuns;
+	}
+	throw py::type_error();
+}
