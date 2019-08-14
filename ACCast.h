@@ -20,7 +20,7 @@ namespace pybind11 {
 				else if (!PyUnicode_Check(load_src.ptr()) && PYBIND11_BYTES_CHECK(load_src.ptr())) {
 					const char *bytes = PYBIND11_BYTES_AS_STRING(src.ptr());
 					if (bytes) {
-						value = GS::UniString(bytes, (size_t)PYBIND11_BYTES_SIZE(src.ptr()));
+						value = GS::UniString(bytes, (size_t)PYBIND11_BYTES_SIZE(src.ptr()),GSCharCode::CC_System);
 						return true;
 					}
 				}
