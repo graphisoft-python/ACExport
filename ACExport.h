@@ -3,11 +3,13 @@
 #include	"Python.h"
 #include	"pybind11/pybind11.h"
 #include	"Location.hpp"
+#include	"Definitions.hpp"
+#include	"APIdefs_Environment.h"
 
 typedef struct {
 	void(*WriteReport_Alert)(const char* format, ...);
 
-
+	GSErrCode (*ACAPI_Environment)(API_EnvironmentID code, void* par1, void* par2, void* par3);
 
 
 
