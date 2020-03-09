@@ -259,11 +259,11 @@ namespace adapter {
 			this->Normalize();
 		}
 		Rect(const Point& pt, const double& width, const double& height) :
-			left(pt.GetX()),top(pt.GetY()),right(left+width),bottom(right+height),scale(1){
+			left(pt.GetX()),top(pt.GetY()),right(left+width),bottom(top+height),scale(1){
 			this->Normalize();
 		}
 		Rect(const Point& pt, const double& width, const double& height, const double& newScale) :
-			left(pt.GetX()), top(pt.GetY()), right(left + width), bottom(right + height), scale(newScale) {
+			left(pt.GetX()), top(pt.GetY()), right(left + width), bottom(top + height), scale(newScale) {
 			this->Normalize();
 		}
 
